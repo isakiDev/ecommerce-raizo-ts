@@ -1,12 +1,6 @@
-interface Props {
-  id: number
-  name: string
-  detail: string
-  price: string
-  image: string
-}
+import { type ProductoType } from '../types.d'
 
-export const Product = ({ id, name, detail, price, image }: Props) => {
+export const Product = ({ id, name, detail, price, image }: ProductoType) => {
   return (
     <>
         <div className="bg-black h-[250px] w-[250px]">

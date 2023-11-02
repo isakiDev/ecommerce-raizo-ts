@@ -1,21 +1,23 @@
+import { useState } from 'react'
 import { Navbar } from '../components/Navbar'
 import { Sidebar } from '../components/Sidebar'
 
-interface Props {
-  active: boolean
-  onToggleMenu: () => void
-}
+export const Header = () => {
+  const [toggleMenu, setToggleMenu] = useState(false)
 
-export const Header = ({ active, onToggleMenu }: Props) => {
+  const handleClickMenu = () => {
+    setToggleMenu(!toggleMenu)
+  }
+
   return (
     <header>
       <Navbar
-        onToggleMenu={onToggleMenu}
+        onToggleMenu={handleClickMenu}
       />
 
       <Sidebar
-        onToggleMenu={onToggleMenu}
-        active={active}
+        onToggleMenu={handleClickMenu}
+        active={toggleMenu}
       />
     </header>
   )
