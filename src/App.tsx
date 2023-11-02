@@ -1,7 +1,14 @@
 import { useState } from 'react'
-import { Header } from './components/Header'
 
-function App () {
+import { ListProduct } from './components/ListProduct'
+import { Header } from './components/Header'
+import products from './mock/products.json'
+
+const initialState = products
+
+
+export function App () {
+  const [listState] = useState(initialState)
   const [toggleMenu, setToggleMenu] = useState(false)
 
   const handleClickMenu = () => {
@@ -14,8 +21,7 @@ function App () {
         active={toggleMenu}
         onToggleMenu={handleClickMenu}
       />
+      <ListProduct listState = {listState} />
     </>
   )
 }
-
-export default App
