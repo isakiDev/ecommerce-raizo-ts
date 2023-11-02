@@ -1,17 +1,15 @@
 import { useState } from 'react'
+import { ListProduct } from '../components/ListProduct'
 
-import { ListProduct } from './components/ListProduct'
-import { Header } from './components/Header'
-import products from './mock/products.json'
+import products from '../mock/products.json'
 
 const initialState = products
 
-export function App () {
+export const Home = () => {
   const [listState] = useState(initialState)
 
   return (
     <>
-      <Header/>
       <ListProduct listState = {listState} />
     </>
   )
