@@ -3,9 +3,12 @@ import { Banner } from '../components/Banner'
 
 export const Home = () => {
   return (
-    <main className='px-4 bg-black/95'>
+    <main className='bg-black/95'>
       <Banner/>
-      <ListProduct/>
+
+      <section className='max-w-[1000px] mx-auto p-4'>
+        <ListProduct/>
+      </section>
     </main>
   )
 }
