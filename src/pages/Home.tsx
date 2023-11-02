@@ -1,16 +1,11 @@
-import { useState } from 'react'
 import { ListProduct } from '../components/ListProduct'
-
-import products from '../mock/products.json'
-
-const initialState = products
+import { Banner } from '../components/Banner'
 
 export const Home = () => {
-  const [listState] = useState(initialState)
-
   return (
-    <>
-      <ListProduct listState = {listState} />
-    </>
+    <main className='px-4 bg-black/95'>
+      <Banner/>
+      <ListProduct/>
+    </main>
   )
 }

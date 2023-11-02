@@ -1,14 +1,14 @@
+import { useContext } from 'react'
+
+import { ProductContext } from '../context/product'
 import { Product } from './Product'
-import { type ListProductType } from '../types.d'
 
-interface Props {
-  listState: ListProductType
-}
+export const ListProduct = () => {
+  const { products } = useContext(ProductContext)
 
-export const ListProduct = ({ listState }: Props) => {
   return (
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-2 ">
-      { listState?.map(product => (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-2">
+      { products?.map(product => (
         <Product
           key={product.id}
           id={product.id}
