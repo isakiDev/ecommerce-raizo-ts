@@ -1,43 +1,212 @@
-[{
-	"id": 1,
-	"name": "hero Product",
-	"detail": "Lorem ipsum dolor sit amet",
-	"price": "2",
-	"image": "http://placehold.it/940x300/999/CCC"
-},{
-	"id": 2,
-	"name": "Product 1",
-	"detail": "Lorem ipsum dolor sit amet",
-	"price": "23",
-	"image": "http://placehold.it/300x300/999/CCC"
-},{
-	"id": 3,
-	"name": "Product 2",
-	"detail": "Lorem ipsum dolor sit amet",
-	"price": "10",
-	"image": "http://placehold.it/300x300/999/CCC"
-},{
-	"id": 4,
-	"name": "Product 3",
-	"detail": "Lorem ipsum dolor sit amet",
-	"price": "85",
-	"image": "http://placehold.it/300x300/999/CCC"
-},{
-	"id": 5,
-	"name": "Product 4",
-	"detail": "Lorem ipsum dolor sit amet",
-	"price": "99",
-	"image": "http://placehold.it/300x300/999/CCC"
-},{
-	"id": 6,
-	"name": "Product 5",
-	"detail": "Lorem ipsum dolor sit amet",
-	"price": "70",
-	"image": "http://placehold.it/300x300/999/CCC"
-},{
-	"id": 7,
-	"name": "Product 6",
-	"detail": "Lorem ipsum dolor sit amet",
-	"price": "50",
-	"image": "http://placehold.it/300x300/999/CCC"
-}]
+[
+	{
+		"name": "CPU",
+		"description": "Central Processing Unit",
+		"price": "$200",
+		"id": "1",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "GPU",
+		"description": "Graphics Processing Unit",
+		"price": "$400",
+		"id": "2",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "RAM",
+		"description": "Random Access Memory",
+		"price": "$100",
+		"id": "3",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Motherboard",
+		"description": "Main Circuit Board",
+		"price": "$150",
+		"id": "4",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "PSU",
+		"description": "Power Supply Unit",
+		"price": "$80",
+		"id": "5",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Storage",
+		"description": "Data Storage Device",
+		"price": "$120",
+		"id": "6",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Monitor",
+		"description": "Computer Display",
+		"price": "$250",
+		"id": "7",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Keyboard",
+		"description": "Input Device",
+		"price": "$50",
+		"id": "8",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Mouse",
+		"description": "Pointing Device",
+		"price": "$30",
+		"id": "9",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Headphones",
+		"description": "Audio Output Device",
+		"price": "$100",
+		"id": "10",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Microphone",
+		"description": "Audio Input Device",
+		"price": "$80",
+		"id": "11",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Case",
+		"description": "Enclosure for Components",
+		"price": "$70",
+		"id": "12",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Cooler",
+		"description": "Heat Dissipation Device",
+		"price": "$50",
+		"id": "13",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Fans",
+		"description": "Air Circulation Device",
+		"price": "$20",
+		"id": "14",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "SSD",
+		"description": "Solid State Drive",
+		"price": "$150",
+		"id": "15",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "HDD",
+		"description": "Hard Disk Drive",
+		"price": "$80",
+		"id": "16",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "GPU",
+		"description": "Graphics Processing Unit",
+		"price": "$400",
+		"id": "17",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "RAM",
+		"description": "Random Access Memory",
+		"price": "$100",
+		"id": "18",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Motherboard",
+		"description": "Main Circuit Board",
+		"price": "$150",
+		"id": "19",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "PSU",
+		"description": "Power Supply Unit",
+		"price": "$80",
+		"id": "20",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Storage",
+		"description": "Data Storage Device",
+		"price": "$120",
+		"id": "21",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Monitor",
+		"description": "Computer Display",
+		"price": "$250",
+		"id": "22",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Keyboard",
+		"description": "Input Device",
+		"price": "$50",
+		"id": "23",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Mouse",
+		"description": "Pointing Device",
+		"price": "$30",
+		"id": "24",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Headphones",
+		"description": "Audio Output Device",
+		"price": "$100",
+		"id": "25",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Microphone",
+		"description": "Audio Input Device",
+		"price": "$80",
+		"id": "26",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Case",
+		"description": "Enclosure for Components",
+		"price": "$70",
+		"id": "27",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Cooler",
+		"description": "Heat Dissipation Device",
+		"price": "$50",
+		"id": "28",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "Fans",
+		"description": "Air Circulation Device",
+		"price": "$20",
+		"id": "29",
+		"image": "http://placehold.it/300x300/999/CCC"
+	},
+	{
+		"name": "SSD",
+		"description": "Solid State Drive",
+		"price": "$150",
+		"id": "30",
+		"image": "http://placehold.it/300x300/999/CCC"
+	}
+]
