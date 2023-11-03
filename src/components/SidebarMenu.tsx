@@ -1,31 +1,18 @@
-const LINKS = [
-  {
-    literal: 'Inicio',
-    ref: '#'
-  },
-  {
-    literal: 'Tienda',
-    ref: '#'
-  },
-  {
-    literal: 'Contacto',
-    ref: '#'
-  }
-]
+import { useContext } from 'react'
 
-interface Props {
-  active: boolean
-  onToggleMenu: () => void
-}
+import { SidebarContext } from '../context/sidebar'
+import { MENU_LINKS } from '../consts'
 
-export const Sidebar = ({ active, onToggleMenu }: Props) => {
-  const isActive = active ? 'translate-x-[0]' : 'translate-x-[-100%]'
-  const isHidden = active ? '' : 'hidden'
+export const SidebarMenu = () => {
+  const { sidebarStates, onToggleMenu } = useContext(SidebarContext)
+
+  const isActive = sidebarStates.menu ? 'translate-x-[0]' : 'translate-x-[-100%]'
+  const isHidden = sidebarStates.menu ? '' : 'hidden'
 
   return (
     <>
       <div
-        onClick={onToggleMenu }
+        onClick={onToggleMenu}
         className={`${isHidden} bg-black/90 min-h-screen w-full fixed top-0 left-0 right-0 z-10`}
       />
 
@@ -37,7 +24,7 @@ export const Sidebar = ({ active, onToggleMenu }: Props) => {
 
         <section className="flex flex-col divide-y divide-gray-500/50">
           {
-            LINKS.map(({ literal, ref }) => (
+            MENU_LINKS.map(({ literal, ref }) => (
               <a
                 className="text-sm font-semibold py-4 px-4"
                 key={literal}

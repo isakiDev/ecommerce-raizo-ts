@@ -1,24 +1,13 @@
-import { useState } from 'react'
 import { Navbar } from '../components/Navbar'
-import { Sidebar } from '../components/Sidebar'
+import { SidebarMenu } from './SidebarMenu'
+import { SidebarShopping } from './SidebarShopping'
 
 export const Header = () => {
-  const [toggleMenu, setToggleMenu] = useState(false)
-
-  const handleClickMenu = () => {
-    setToggleMenu(!toggleMenu)
-  }
-
   return (
     <header>
-      <Navbar
-        onToggleMenu={handleClickMenu}
-      />
-
-      <Sidebar
-        onToggleMenu={handleClickMenu}
-        active={toggleMenu}
-      />
+      <Navbar/>
+      <SidebarMenu/>
+      <SidebarShopping/>
     </header>
   )
 }

@@ -1,3 +1,5 @@
+import { type SIDEBAR_STATES } from './consts'
+
 export interface ProductoType {
   id: number
   name: string
@@ -7,3 +9,4 @@ export interface ProductoType {
 }
 
 export type ListProductType = ProductoType[]
+export type SidebarValues = keyof typeof SIDEBAR_STATES
