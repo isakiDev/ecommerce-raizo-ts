@@ -53,7 +53,7 @@ export const ProductView = () => {
         </ul>
         <h1 className='text-red-600'>Sold Out</h1>
 
-        <div className='flex justify-left items-center [&>a]:pr-3 [&>svg]:w-[25px] [&>svg]:h-[25px]'>
+        <div className='flex justify-left items-center [&>a]:pr-3 [&>svg]:w-[25px] [&>svg]:h-[25px] [&>a]:cursor-pointer [&>svg]:cursor-pointer'>
           <Random />
           <a>Compare</a>
           <HeartTransparent />
@@ -61,7 +61,7 @@ export const ProductView = () => {
         </div>
         <div className="w-full mx-auto static border-t border-t-gray-600">
           <div onClick={accordeonOpen}>
-            <div className={`[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer flex items-center justify-between [&>svg]:transform [&>svg]:rotate-180 [&>svg]:transition [&>svg]:duration-300 ${isActiveAccordion}`} >
+            <div className={`[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer flex items-center justify-between [&>svg]:transform [&>svg]:transition [&>svg]:duration-300 ${isActiveAccordion}`} >
               <span className='text-2xl'>Description</span>
               <ChevronDown />
             </div>
