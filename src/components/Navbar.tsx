@@ -3,8 +3,8 @@ import { useContext } from 'react'
 import { SidebarContext } from '../context/sidebar'
 import {
   MenuIcon,
-  ShoppingCart,
-  Logo
+  ShoppingCartIcon,
+  LogoIcon
 } from './Icons'
 
 export const Navbar = () => {
@@ -19,13 +19,13 @@ export const Navbar = () => {
         <MenuIcon/>
       </a>
 
-      <Logo/>
+      <LogoIcon/>
 
       <a
         className='hover:cursor-pointer'
         onClick={onToggleShopping}
       >
-        <ShoppingCart/>
+        <ShoppingCartIcon/>
       </a>
     </nav>
   )

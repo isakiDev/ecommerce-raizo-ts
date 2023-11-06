@@ -27,7 +27,7 @@ export const SidebarShopping = () => {
           </button>
         </header>
 
-        <section className='overflow-y-auto w-full sm:max-h-full'>
+        <section className='flex-1 overflow-y-auto w-full'>
           <ul className='flex flex-col p-4'>
             {
               products?.map(product => (
@@ -39,6 +39,7 @@ export const SidebarShopping = () => {
             }
           </ul>
         </section>
+
         <footer className='flex flex-col gap-4 p-4 border-t-[1px]'>
           <div className='flex justify-between items-center'>
             <p>SUBTOTAL :</p>
@@ -48,7 +49,6 @@ export const SidebarShopping = () => {
             className='bg-indigo-600 h-[42px] w-full'
           >FINALIZAR COMPRA</button>
         </footer>
-
       </aside>
     </>
   )
