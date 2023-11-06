@@ -5,15 +5,15 @@ import { Contact } from './Contact'
 export const DescriptionProduct = () => {
   const [toggleAccordion, setToggleAccordion] = useState(false)
 
-  const accordeonOpen = () => {
-    setToggleAccordion(!toggleAccordion)
-  }
+  //   const accordeonOpen = () => {
+  //     setToggleAccordion(!toggleAccordion)
+  //   }
 
   const isActiveAccordion = toggleAccordion ? '[&>svg]:rotate-180' : '[&>svg]:rotate-0 '
   const isAccordionOpen = toggleAccordion ? 'h-[1000px]' : 'h-0'
   return (
         <div className="w-full mx-auto static border-t border-t-gray-600 text-white mt-[20px]">
-            <div onClick={accordeonOpen}>
+            <div onClick={() => { setToggleAccordion(prev => !prev) } }>
                 <div className={`[&>svg]:w-[50px] [&>svg]:h-[50px] cursor-pointer flex items-center justify-between [&>svg]:transform [&>svg]:transition [&>svg]:duration-300 ${isActiveAccordion}`} >
                     <span className='text-2xl text-sky-600'>Description</span>
                     <ChevronDown />
