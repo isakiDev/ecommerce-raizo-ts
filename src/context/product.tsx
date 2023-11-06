@@ -13,11 +13,7 @@ export const ProductContext = createContext<ContextData>({
 
 const initialState = productsMock
 
-interface Props {
-  children: JSX.Element
-}
-
-export function ProductProvider ({ children }: Props) {
+export function ProductProvider ({ children }: { children: JSX.Element }) {
   const [products] = useState(initialState)
 
   return (

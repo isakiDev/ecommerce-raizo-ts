@@ -31,6 +31,12 @@ module.exports = {
     "rules": {
         "@typescript-eslint/explicit-function-return-type": 'off',
         "react/react-in-jsx-scope": "off",
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+
+        // jsx
+        'react/jsx-closing-bracket-location': 'error',
+        'react/jsx-indent-props': [ 'error', 2 ],
+        'react/jsx-indent': [ 'error', 2 ],
+        'react/jsx-sort-props': 'error'
     }
 }

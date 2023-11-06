@@ -1,14 +1,15 @@
+import { useContext } from 'react'
+
+import { SidebarContext } from '../context/sidebar'
 import {
   MenuIcon,
-  ShoppingCart,
-  Logo
+  ShoppingCartIcon,
+  LogoIcon
 } from './Icons'
 
-interface Props {
-  onToggleMenu: () => void
-}
+export const Navbar = () => {
+  const { onToggleMenu, onToggleShopping } = useContext(SidebarContext)
 
-export const Navbar = ({ onToggleMenu }: Props) => {
   return (
     <nav className='flex justify-between items-center bg-black px-4 py-7'>
       <a
@@ -17,8 +18,15 @@ export const Navbar = ({ onToggleMenu }: Props) => {
        >
         <MenuIcon/>
       </a>
-      <Logo/>
-      <ShoppingCart/>
+
+      <LogoIcon/>
+
+      <a
+        className='hover:cursor-pointer'
+        onClick={onToggleShopping}
+      >
+        <ShoppingCartIcon/>
+      </a>
     </nav>
   )
 }
