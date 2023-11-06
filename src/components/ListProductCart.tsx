@@ -13,6 +13,7 @@ export const ListProductCart = ({ cart }: Props) => {
           <ShoppingCardProduct
             key={product.id}
             product={product}
+            quantity={product.quantity}
           />
         ))
       }

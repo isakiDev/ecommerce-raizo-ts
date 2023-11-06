@@ -1,18 +1,22 @@
 import { type SIDEBAR_STATES } from './consts'
 
+// products
 export interface ProductType {
-  id: number
+  id: string
   name: string
-  detail: string
+  description: string
   price: string
   image: string
 }
 
 export type ListProductType = ProductType[]
+export type ProductIdType = Pick<ProductType, 'id'>
+export type ProductPriceType = Pick<ProductType, 'price'>
+
+// sidebars
 export type SidebarValues = keyof typeof SIDEBAR_STATES
 
-export interface ProductCartType extends ProductType {
-  quantity: 0
-}
-
+// cart
+export type ProductCartType = Omit<ProductType, 'description'> & { quantity: number }
 export type ListProductCartType = ProductCartType[]
+export type ProductCartQuantityType = Pick<ProductCartType, 'quantity'>

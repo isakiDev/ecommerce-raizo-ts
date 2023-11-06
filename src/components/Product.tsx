@@ -1,6 +1,6 @@
 import { type ProductType } from '../types.d'
 
-export const Product = ({ id, name, detail, price, image }: ProductType) => {
+export const Product = ({ id, name, description, price, image }: ProductType) => {
   return (
     <>
       <div className=" w-full">
