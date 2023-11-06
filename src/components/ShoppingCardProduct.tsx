@@ -1,8 +1,8 @@
-import { type ProductoType } from '../types'
+import { type ProductType } from '../types'
 import { CloseIcon } from './Icons'
 
 interface Props {
-  product: ProductoType
+  product: ProductType
 }
 
 export const ShoppingCardProduct = ({ product }: Props) => {
@@ -12,9 +12,9 @@ export const ShoppingCardProduct = ({ product }: Props) => {
       key={product.id}
     >
       <img
+        alt={`Image product ${product.name}`}
         className='w-[60px] h-[60px]'
         src={product.image}
-        alt={`Image product ${product.name}`}
       />
       <div className='flex w-full justify-between items-center'>
         <a
