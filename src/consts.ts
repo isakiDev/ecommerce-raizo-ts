@@ -1,7 +1,7 @@
 export const MENU_LINKS = [
   {
     literal: 'Inicio',
-    ref: '#'
+    ref: '/'
   },
   {
     literal: 'Tienda',

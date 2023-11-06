@@ -1,13 +1,13 @@
 import { createContext, useState } from 'react'
 
-import { type ListProductType } from '../types'
 import productsMock from '../mock/products.json'
+import { type ListProductType } from '../types.d'
 
-interface ContextData {
+interface Props {
   products: ListProductType
 }
 
-export const ProductContext = createContext<ContextData>({
+export const ProductContext = createContext<Props>({
   products: []
 })
 
