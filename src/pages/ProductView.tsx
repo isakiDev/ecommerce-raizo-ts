@@ -6,17 +6,16 @@ export const ProductView = () => {
   return (
     <div className='bg-neutral-900 '>
       <div className="lg:mx-[315px] p-4">
+        <div className=' bg-neutral-900 grid grid-cols-1 lg:grid-cols-2'>
+          <section className="mt-[20px]">
+            <PreviewProduct />
+          </section>
 
-      <div className=' bg-neutral-900 grid grid-cols-1 lg:grid-cols-2'>
-        <section className="mt-[20px]">
-          <PreviewProduct />
-        </section>
-
-        <section className='mt-[20px] text-white [&>h1]:mt-[10px] [&>div]:mt-[10px] '>
-          <InfoProduct />
-        </section>
-      </div>
-      <DescriptionProduct/>
+          <section className='mt-[20px] text-white [&>h1]:mt-[10px] [&>div]:mt-[10px] '>
+            <InfoProduct />
+          </section>
+        </div>
+        <DescriptionProduct/>
       </div>
     </div>
   )

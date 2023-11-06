@@ -12,8 +12,8 @@ export const SidebarMenu = () => {
   return (
     <>
       <div
-        onClick={onToggleMenu}
         className={`${isHidden} bg-black/90 min-h-screen w-full fixed top-0 left-0 right-0 z-10`}
+        onClick={onToggleMenu}
       />
 
       <aside className={`${isActive} transition-all duration-300 fixed top-0 left-0 w-[300px] min-h-screen bg-[#101010] shadow-md text-white z-20`}>
@@ -27,8 +27,8 @@ export const SidebarMenu = () => {
             MENU_LINKS.map(({ literal, ref }) => (
               <a
                 className="text-sm font-semibold py-4 px-4"
-                key={literal}
                 href={ref}
+                key={literal}
               >{literal.toUpperCase()}</a>
             ))
           }

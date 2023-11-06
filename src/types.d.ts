@@ -1,6 +1,6 @@
 import { type SIDEBAR_STATES } from './consts'
 
-export interface ProductoType {
+export interface ProductType {
   id: number
   name: string
   detail: string
@@ -8,5 +8,11 @@ export interface ProductoType {
   image: string
 }
 
-export type ListProductType = ProductoType[]
+export type ListProductType = ProductType[]
 export type SidebarValues = keyof typeof SIDEBAR_STATES
+
+export interface ProductCartType extends ProductType {
+  quantity: 0
+}
+
+export type ListProductCartType = ProductCartType[]

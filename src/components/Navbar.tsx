@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 
 import { SidebarContext } from '../context/sidebar'
 import {
@@ -15,11 +16,13 @@ export const Navbar = () => {
       <a
         className='hover:cursor-pointer'
         onClick={onToggleMenu}
-       >
+      >
         <MenuIcon/>
       </a>
 
-      <LogoIcon/>
+      <Link to='/'>
+        <LogoIcon/>
+      </Link>
 
       <a
         className='hover:cursor-pointer'
