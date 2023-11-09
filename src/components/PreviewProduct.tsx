@@ -1,7 +1,7 @@
 import { FullScreenIcon } from './Icons'
 import { type ProductImagenType } from '../types.d'
 
-export const PreviewProduct = ({ image }: ProductImagenType) => {
+export const PreviewProduct = ({ image }: { image: ProductImagenType }) => {
   return (
     <>
       <div className='flex items-center align-middle justify-center'>
