@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import { SidebarContext } from '../context/sidebar'
 import { MENU_LINKS } from '../consts'
@@ -26,11 +26,11 @@ export const SidebarMenu = () => {
         <section className="flex flex-col divide-y divide-gray-500/50">
           {
             MENU_LINKS.map(({ literal, ref }) => (
-              <Link
+              <NavLink
                 className="text-sm font-semibold py-4 px-4"
                 key={literal}
                 to={ref}
-              >{literal.toUpperCase()}</Link>
+              >{literal.toUpperCase()}</NavLink>
             ))
           }
         </section>
