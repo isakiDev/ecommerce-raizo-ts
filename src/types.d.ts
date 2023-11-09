@@ -25,9 +25,7 @@ export type ListProductCartType = ProductCartType[]
 export type ProductCartQuantityType = Pick<ProductCartType, 'quantity'>
 
 // categories
-export interface ListCategoriesType {
-  categories: Category[]
-}
+export type ListCategoriesType = Category[]
 
 export interface Category {
   name: string

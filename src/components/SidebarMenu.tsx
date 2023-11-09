@@ -3,9 +3,12 @@ import { NavLink } from 'react-router-dom'
 
 import { SidebarContext } from '../context/sidebar'
 import { MENU_LINKS } from '../consts'
+import { useCategories } from '../hooks/useCategories'
 
 export const SidebarMenu = () => {
   const { sidebarStates, onToggleMenu } = useContext(SidebarContext)
+
+  const { categories, loading } = useCategories()
 
   const isActive = sidebarStates.menu ? 'translate-x-[0]' : 'translate-x-[-100%]'
   const isHidden = sidebarStates.menu ? '' : 'hidden'
@@ -34,6 +37,21 @@ export const SidebarMenu = () => {
             ))
           }
         </section>
+
+        {
+        loading
+          ? <h1>Loading....</h1>
+          : (
+              categories.map(category => (
+                <div
+                  className='flex'
+                  key={category.id}
+                >
+                  <a>{category.name}</a>
+                </div>
+              ))
+            )
+      }
       </aside>
     </>
   )

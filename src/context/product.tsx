@@ -1,8 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
-
 import { type ListProductType } from '../types.d'
 import { getProducts } from '../services/product'
-import { getCategories } from '../services/categories'
 
 interface Props {
   products: ListProductType
@@ -21,15 +19,8 @@ export function ProductProvider ({ children }: { children: JSX.Element }) {
       .catch(err => { console.error(err) })
   }
 
-  const getCategoriesStore = () => {
-    getCategories()
-      .then(categories => { console.log(categories) })
-      .catch(err => { console.error(err) })
-  }
-
   useEffect(() => {
     getProductsStore()
-    getCategoriesStore()
   }, [])
 
   return (

@@ -10,9 +10,7 @@ const getCategories = async (): Promise<ListCategoriesType> => {
   const data = categories?.map((category: Category) => (
     {
       id: category.id,
-      name: category.name,
-      state: category.state,
-      user: category.user
+      name: category.name
     }
   ))
 
