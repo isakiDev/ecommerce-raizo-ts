@@ -5,10 +5,6 @@ import { Contact } from './Contact'
 export const DescriptionProduct = () => {
   const [toggleAccordion, setToggleAccordion] = useState(false)
 
-  //   const accordeonOpen = () => {
-  //     setToggleAccordion(!toggleAccordion)
-  //   }
-
   const isActiveAccordion = toggleAccordion ? '[&>svg]:rotate-180' : '[&>svg]:rotate-0 '
   const isAccordionOpen = toggleAccordion ? 'h-[1000px]' : 'h-0'
   return (

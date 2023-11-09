@@ -5,13 +5,15 @@ export interface ProductType {
   id: string
   name: string
   description: string
-  price: string
+  price: number
   image: string
 }
 
 export type ListProductType = ProductType[]
 export type ProductIdType = Pick<ProductType, 'id'>
 export type ProductPriceType = Pick<ProductType, 'price'>
+export type ProductImagenType = Pick<ProductType, 'image'>
+export type ProductNameType = Pick<ProductType, 'name'>
 
 // sidebars
 export type SidebarValues = keyof typeof SIDEBAR_STATES
