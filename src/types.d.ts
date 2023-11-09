@@ -10,10 +10,11 @@ export interface ProductType {
 }
 
 export type ListProductType = ProductType[]
-export type ProductIdType = Pick<ProductType, 'id'>
-export type ProductPriceType = Pick<ProductType, 'price'>
-export type ProductImagenType = Pick<ProductType, 'image'>
-export type ProductNameType = Pick<ProductType, 'name'>
+export type ProductIdType = ProductType['id']
+export type ProductPriceType = ProductType['price']
+export type ProductImagenType = ProductType['image']
+export type ProductNameType = ProductType['name']
+export type ProductDescriptionType = ProductType['description']
 
 // sidebars
 export type SidebarValues = keyof typeof SIDEBAR_STATES

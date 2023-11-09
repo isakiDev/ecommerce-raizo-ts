@@ -20,8 +20,6 @@ export const ProductView = () => {
     image: product?.image ?? ''
   }
 
-  console.log(hasProduct)
-
   return (
     <div className='bg-neutral-900 '>
       <div className="lg:mx-[315px] p-4">
@@ -34,7 +32,7 @@ export const ProductView = () => {
             <InfoProduct name={hasProduct.name} price={hasProduct.price}/>
           </section>
         </div>
-        <DescriptionProduct/>
+        <DescriptionProduct description={hasProduct.description} />
       </div>
     </div>
   )
