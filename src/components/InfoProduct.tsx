@@ -2,8 +2,16 @@ import {
   HeartTransparentIcon,
   RandomIcon
 } from './Icons'
+import { type ProductPriceType, type ProductNameType } from '../types.d'
 
-export const InfoProduct = () => {
+interface Props {
+  name: ProductNameType
+  price: ProductPriceType
+}
+
+export const InfoProduct = ({ name, price }: Props) => {
+  console.log(price)
+
   return (
     <>
       <nav className='text-sm'>
@@ -11,8 +19,8 @@ export const InfoProduct = () => {
         <a href="">category / </a>
         <a href="">brand category</a>
       </nav>
-      <h1 className='text-2xl'>Name</h1>
-      <h1 className='text-xl'>$Price</h1>
+      <h1 className='text-2xl'>{name}</h1>
+      <h1 className='text-xl'>${price}</h1>
       <ul className='list-disc pl-4 text-sm'>
         <li>characteristic</li>
         <li>.</li>

@@ -20,22 +20,7 @@ export const CartContext = createContext<Props>({
 })
 
 export const CartProvider = ({ children }: { children: JSX.Element }) => {
-  const [cart, setCart] = useState<ListProductCartType>([
-    {
-      id: '2',
-      image: 'https://images.samsung.com/is/image/samsung/p6pim/cl/ls34a650ublxzs/gallery/cl-s65ua-461876-ls34a650ublxzs-536828514?$730_584_PNG$',
-      name: 'Monitor LG',
-      price: '$5000',
-      quantity: 1
-    },
-    {
-      id: '3',
-      image: 'https://cdnx.jumpseller.com/centralgamer/image/15214471/thumb/610/610?1686082908',
-      name: 'Mouse Logitech',
-      price: '$600',
-      quantity: 4
-    }
-  ])
+  const [cart, setCart] = useState<ListProductCartType>([])
 
   const onAddProductCart = (product: ProductCartType) => {
     setCart(prev => [...prev, product])
