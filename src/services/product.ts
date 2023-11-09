@@ -6,6 +6,8 @@ interface ProductInterface {
   description: string
   price: number
   image: string
+  quantity: number
+  state: boolean
 }
 
 const getProduct = async () => {
@@ -19,8 +21,9 @@ const getProduct = async () => {
       name: product.name,
       description: product.description,
       price: product.price,
-      image: product.image
-
+      image: product.image,
+      quantity: product.quantity,
+      state: product.state
     }
   ))
 

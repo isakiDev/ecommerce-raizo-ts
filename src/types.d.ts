@@ -7,6 +7,7 @@ export interface ProductType {
   description: string
   price: number
   image: string
+  quantity: number
 }
 
 export type ListProductType = ProductType[]
@@ -15,6 +16,7 @@ export type ProductPriceType = ProductType['price']
 export type ProductImagenType = ProductType['image']
 export type ProductNameType = ProductType['name']
 export type ProductDescriptionType = ProductType['description']
+export type ProductQuantityType = ProductType['quantity']
 
 // sidebars
 export type SidebarValues = keyof typeof SIDEBAR_STATES
