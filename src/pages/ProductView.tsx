@@ -17,7 +17,8 @@ export const ProductView = () => {
     name: product?.name ?? '',
     description: product?.description ?? '',
     price: product?.price ?? 0,
-    image: product?.image ?? ''
+    image: product?.image ?? '',
+    quantity: product?.quantity ?? 0
   }
 
   return (
@@ -25,11 +26,11 @@ export const ProductView = () => {
       <div className="lg:mx-[315px] p-4">
         <div className=' bg-neutral-900 grid grid-cols-1 lg:grid-cols-2'>
           <section className="mt-[20px]">
-            <PreviewProduct image={hasProduct.image} />
+            <PreviewProduct image={hasProduct.image} quantity={hasProduct.quantity} />
           </section>
 
           <section className='mt-[20px] text-white [&>h1]:mt-[10px] [&>div]:mt-[10px] '>
-            <InfoProduct name={hasProduct.name} price={hasProduct.price}/>
+            <InfoProduct name={hasProduct.name} price={hasProduct.price} quantity={hasProduct.quantity}/>
           </section>
         </div>
         <DescriptionProduct description={hasProduct.description} />

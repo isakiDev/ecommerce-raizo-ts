@@ -16,6 +16,7 @@ export const ListProduct = () => {
           key={product.id}
           name={product.name}
           price={product.price}
+          quantity={product.quantity}
         />
       ))
       }

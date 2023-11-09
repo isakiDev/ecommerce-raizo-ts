@@ -7,7 +7,7 @@ export const DescriptionProduct = ({ description }: { description: ProductDescri
   const [toggleAccordion, setToggleAccordion] = useState(false)
 
   const isActiveAccordion = toggleAccordion ? '[&>svg]:rotate-180' : '[&>svg]:rotate-0 '
-  const isAccordionOpen = toggleAccordion ? 'h-screen' : 'h-0'
+  const isAccordionOpen = toggleAccordion ? 'h-[100px]' : 'h-0'
   return (
     <div className="w-full mx-auto static border-t border-t-gray-600 text-white mt-[20px]">
       <div onClick={() => { setToggleAccordion(prev => !prev) } }>
