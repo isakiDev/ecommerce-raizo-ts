@@ -1,7 +1,7 @@
 import { type ListProductType } from '../types'
 
 interface ProductInterface {
-  _id: string
+  id: string
   name: string
   description: string
   price: number
@@ -17,7 +17,7 @@ const getProduct = async () => {
 
   const data: ListProductType = products?.map((product: ProductInterface) => (
     {
-      id: product._id,
+      id: product.id,
       name: product.name,
       description: product.description,
       price: product.price,
