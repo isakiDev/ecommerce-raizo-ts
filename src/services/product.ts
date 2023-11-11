@@ -1,5 +1,16 @@
 import { type ProductType, type ListProductType } from '../types'
 
+
+interface ProductInterface {
+  id: string
+  name: string
+  description: string
+  price: number
+  image: string
+  quantity: number
+  state: boolean
+}
+
 const getProducts = async () => {
   const product = await fetch('http://localhost:8080/products')
 
