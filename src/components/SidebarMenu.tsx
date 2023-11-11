@@ -1,11 +1,14 @@
 import { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import { SidebarContext } from '../context/sidebar'
 import { MENU_LINKS } from '../consts'
+import { useCategories } from '../hooks/useCategories'
 
 export const SidebarMenu = () => {
   const { sidebarStates, onToggleMenu } = useContext(SidebarContext)
+
+  const { categories, loading } = useCategories()
 
   const isActive = sidebarStates.menu ? 'translate-x-[0]' : 'translate-x-[-100%]'
   const isHidden = sidebarStates.menu ? '' : 'hidden'
@@ -26,14 +29,29 @@ export const SidebarMenu = () => {
         <section className="flex flex-col divide-y divide-gray-500/50">
           {
             MENU_LINKS.map(({ literal, ref }) => (
-              <Link
+              <NavLink
                 className="text-sm font-semibold py-4 px-4"
                 key={literal}
                 to={ref}
-              >{literal.toUpperCase()}</Link>
+              >{literal.toUpperCase()}</NavLink>
             ))
           }
         </section>
+
+        {
+        loading
+          ? <h1>Loading....</h1>
+          : (
+              categories.map(category => (
+                <div
+                  className='flex'
+                  key={category.id}
+                >
+                  <a>{category.name}</a>
+                </div>
+              ))
+            )
+      }
       </aside>
     </>
   )
