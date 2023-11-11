@@ -25,3 +25,13 @@ export type SidebarValues = keyof typeof SIDEBAR_STATES
 export type ProductCartType = Omit<ProductType, 'description'> & { quantity: number }
 export type ListProductCartType = ProductCartType[]
 export type ProductCartQuantityType = Pick<ProductCartType, 'quantity'>
+
+// categories
+export type ListCategoriesType = Category[]
+
+export interface Category {
+  name: string
+  state: boolean
+  id: string
+  user: string
+}
