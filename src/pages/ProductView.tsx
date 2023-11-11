@@ -4,13 +4,16 @@ import { DescriptionProduct } from '../components/DescriptionProduct'
 import { useParams } from 'react-router-dom'
 import { ProductContext } from '../context/product'
 import { useContext } from 'react'
+import { Spinner } from '../components/Spinner'
 
 export const ProductView = () => {
   const { id } = useParams()
 
   const { products } = useContext(ProductContext)
 
-  const product = products.find(product => product.id === id)
+  const product = products?.find(product => product?.id === id)
+
+  if (product === undefined) return <Spinner/>
 
   const hasProduct =
   {
@@ -22,7 +25,7 @@ export const ProductView = () => {
   }
 
   return (
-    <div className='bg-neutral-900 '>
+    <div className='bg-neutral-900'>
       <div className="lg:mx-[315px] p-4">
         <div className=' bg-neutral-900 grid grid-cols-1 lg:grid-cols-2'>
           <section className="mt-[20px]">

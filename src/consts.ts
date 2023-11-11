@@ -4,12 +4,12 @@ export const MENU_LINKS = [
     ref: '/'
   },
   {
-    literal: 'Tienda',
+    literal: 'Categorias',
     ref: '#'
   },
   {
     literal: 'Contacto',
-    ref: '#'
+    ref: '/contact'
   }
 ] as const
 
