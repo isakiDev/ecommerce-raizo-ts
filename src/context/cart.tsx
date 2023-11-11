@@ -10,12 +10,12 @@ interface Props {
   cart: ListProductCartType
   onAddProductCart?: (product: ProductCartType) => void
   getTotalPrice: () => ProductPriceType
-  onRemoveProductCart: ({ id }: ProductIdType) => void
+  onRemoveProductCart: ({ id }: { id: ProductIdType }) => void
 }
 
 export const CartContext = createContext<Props>({
   cart: [],
-  getTotalPrice: () => ({ price: '$0' }),
+  getTotalPrice: () => 0,
   onRemoveProductCart: () => {}
 })
 
@@ -26,17 +26,17 @@ export const CartProvider = ({ children }: { children: JSX.Element }) => {
     setCart(prev => [...prev, product])
   }
 
-  const onRemoveProductCart = ({ id }: ProductIdType) => {
+  const onRemoveProductCart = ({ id }: { id: ProductIdType }) => {
     const newCart = cart?.filter(product => product.id !== id)
     setCart(newCart)
   }
 
   const getTotalPrice = () => {
     const price = cart.reduce((acc, current) => {
-      return acc + ((parseFloat(current.price.replace(/[^0-9.]/g, ''))) * current.quantity)
+      return acc + (current.price * current.quantity)
     }, 0)
 
-    return { price: price.toString() }
+    return price
   }
 
   return (
