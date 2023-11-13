@@ -20,15 +20,16 @@ export const ProductView = () => {
       <div className="lg:mx-[315px] p-4">
         <div className=' bg-neutral-900 grid grid-cols-1 lg:grid-cols-2'>
           <section className="mt-[20px]">
-            <PreviewProduct image={product.image} quantity={product.quantity} />
+            <PreviewProduct image={product.image} stock={product.stock} />
           </section>
 
           <section className='mt-[20px] text-white [&>h1]:mt-[10px] [&>div]:mt-[10px] '>
             <InfoProduct
               category={product.category.name}
+              id={product.id}
               name={product.name}
               price={product.price}
-              quantity={product.quantity}
+              stock={product.stock}
             />
           </section>
         </div>

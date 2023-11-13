@@ -2,20 +2,26 @@ import {
   HeartTransparentIcon,
   RandomIcon
 } from './Icons'
-import { type ProductPriceType, type ProductNameType, type ProductQuantityType, type ProductIdType } from '../types.d'
+import {
+  type ProductPriceType,
+  type ProductNameType,
+  type ProductStockType,
+  type ProductIdType
+} from '../types.d'
 import { CartContext } from '../context/cart'
 import { useContext } from 'react'
 import { SidebarContext } from '../context/sidebar'
+import { Link } from 'react-router-dom'
 
 interface Props {
   id: ProductIdType
   name: ProductNameType
   price: ProductPriceType
-  quantity: ProductQuantityType
+  stock: ProductStockType
   category: string
 }
 
-export const InfoProduct = ({ id, name, price, quantity }: Props) => {
+export const InfoProduct = ({ id, name, price, stock, category }: Props) => {
   const { onAddProductCart } = useContext(CartContext)
   const { onToggleShopping } = useContext(SidebarContext)
 
@@ -32,10 +38,10 @@ export const InfoProduct = ({ id, name, price, quantity }: Props) => {
       </nav>
       <h1 className='text-2xl'>{name}</h1>
       <h1 className='text-xl'>${price}</h1>
-      {quantity < 0
+      {stock <= 0
         ? <h1 className='text-red-600'>Sold Out</h1>
         : <div>
-          <h1 className='text-sky-600'>{quantity} available</h1>
+          <h1 className='text-sky-600'>{stock} available</h1>
           <button className='text-white bg-[#5A5FDE] hover:bg-indigo-600 mt-2 px-5 py-3 rounded' onClick={ handleClick }>Agregar al Carro</button>
         </div>
       }
