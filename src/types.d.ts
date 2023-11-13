@@ -8,6 +8,7 @@ export interface ProductType {
   price: number
   image: string
   quantity: number
+  category: CategoryType
 }
 
 export type ListProductType = ProductType[]
@@ -27,11 +28,10 @@ export type ListProductCartType = ProductCartType[]
 export type ProductCartQuantityType = Pick<ProductCartType, 'quantity'>
 
 // categories
-export type ListCategoriesType = Category[]
 
-export interface Category {
-  name: string
-  state: boolean
+interface CategoryType {
   id: string
-  user: string
+  name: string
 }
+
+export type ListCategoriesType = CategoryType[]

@@ -1,5 +1,9 @@
+import {
+  type ProductQuantityType,
+  type ProductImagenType
+} from '../types.d'
+
 import { FullScreenIcon } from './Icons'
-import { type ProductQuantityType, type ProductImagenType } from '../types.d'
 
 interface Props {
   image: ProductImagenType

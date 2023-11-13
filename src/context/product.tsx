@@ -3,20 +3,30 @@ import { type ListProductType } from '../types.d'
 import { getProducts } from '../services/product'
 
 interface Props {
-  products: ListProductType
+  products: ListProductType | []
+  loading: boolean
 }
 
 export const ProductContext = createContext<Props>({
-  products: []
+  products: [],
+  loading: true
 })
 
 export function ProductProvider ({ children }: { children: JSX.Element }) {
-  const [products, setProducts] = useState<ListProductType>([])
+  const [{ products, loading }, setProducts] = useState<Props>({
+    products: [],
+    loading: true
+  })
 
   const getProductsStore = () => {
     getProducts()
-      .then(products => { setProducts(products) })
-      .catch(err => { console.error(err) })
+      .then(data => {
+        setProducts({ loading: false, products: data })
+      })
+      .catch(err => {
+        console.error(err)
+        setProducts(prev => ({ ...prev, loading: true }))
+      })
   }
 
   useEffect(() => {
@@ -26,7 +36,8 @@ export function ProductProvider ({ children }: { children: JSX.Element }) {
   return (
     <ProductContext.Provider
       value={{
-        products
+        products,
+        loading
       }}
     >
       {children}
