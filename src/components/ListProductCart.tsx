@@ -6,6 +6,8 @@ interface Props {
 }
 
 export const ListProductCart = ({ cart }: Props) => {
+  console.log(cart)
+
   return (
     <ul className='flex flex-col p-4'>
       {
@@ -17,6 +19,7 @@ export const ListProductCart = ({ cart }: Props) => {
           />
         ))
       }
+
     </ul>
   )
 }

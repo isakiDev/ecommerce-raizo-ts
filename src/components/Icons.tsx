@@ -36,3 +36,11 @@ export const CartRemoveIcon = () => (
 export const CartAddIcon = () => (
   <svg height="128" viewBox="0 0 24 24" width="128" xmlns="http://www.w3.org/2000/svg"><path d="M11 9h2V6h3V4h-3V1h-2v3H8v2h3M7 18c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2m10 0c-1.1 0-2 .9-2 2s.9 2 2 2s2-.9 2-2s-.9-2-2-2m-9.8-3.2v-.1l.9-1.7h7.4c.7 0 1.4-.4 1.7-1l3.9-7l-1.7-1l-3.9 7h-7L4.3 2H1v2h2l3.6 7.6L5.2 14c-.1.3-.2.6-.2 1c0 1.1.9 2 2 2h12v-2H7.4c-.1 0-.2-.1-.2-.2Z" fill="#ffffff"/></svg>
 )
+
+export const PlusIcon = () => (
+  <svg height="128" viewBox="0 0 24 24" width="128" xmlns="http://www.w3.org/2000/svg"><path d="M17 13h-4v4h-2v-4H7v-2h4V7h2v4h4m2-8H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z" fill="#7c3aed"/></svg>
+)
+
+export const SubtractIcon = () => (
+  <svg height="128" viewBox="0 0 1025 1024" width="128" xmlns="http://www.w3.org/2000/svg"><path d="M896.428 1024h-768q-53 0-90.5-37.5T.428 896V128q0-53 37.5-90.5t90.5-37.5h768q53 0 90.5 37.5t37.5 90.5v768q0 53-37.5 90.5t-90.5 37.5zm-128-544q0-13-9.5-22.5t-22.5-9.5h-448q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h448q13 0 22.5-9.5t9.5-22.5v-64z" fill="#7c3aed"/></svg>
+)

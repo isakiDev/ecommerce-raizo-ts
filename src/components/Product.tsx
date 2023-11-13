@@ -3,12 +3,18 @@ import { CartAddIcon } from './Icons'
 import { Link } from 'react-router-dom'
 
 export const Product = ({ id, name, price, image, quantity }: ProductType) => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    })
+  }
   return (
     <>
 
       <div className=" w-full">
         <Link to={`/products/${id}`}>
-          <div className='flex relative'>
+          <div className='flex relative' onClick={scrollToTop}>
             {quantity < 0 &&
               <div className="bg-black/50 w-[40px] h-[40px] rounded-full flex justify-center items-center text-center text-white absolute right-0 top-0">
                 <span className=" text-ellipsis text-sm">{quantity}</span>

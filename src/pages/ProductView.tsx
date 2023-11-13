@@ -14,6 +14,7 @@ export const ProductView = () => {
 
   const hasProduct =
   {
+    id: product?.id ?? '',
     name: product?.name ?? '',
     description: product?.description ?? '',
     price: product?.price ?? 0,
@@ -30,7 +31,7 @@ export const ProductView = () => {
           </section>
 
           <section className='mt-[20px] text-white [&>h1]:mt-[10px] [&>div]:mt-[10px] '>
-            <InfoProduct name={hasProduct.name} price={hasProduct.price} quantity={hasProduct.quantity}/>
+            <InfoProduct id={hasProduct.id} name={hasProduct.name} price={hasProduct.price} quantity={hasProduct.quantity}/>
           </section>
         </div>
         <DescriptionProduct description={hasProduct.description} />
