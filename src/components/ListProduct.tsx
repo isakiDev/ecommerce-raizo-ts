@@ -1,15 +1,21 @@
-import { useContext } from 'react'
-
-import { ProductContext } from '../context/product'
 import { Product } from './Product'
+import { Spinner } from './Spinner'
+import { type ListProductType } from '../types'
 
-export const ListProduct = () => {
-  const { products } = useContext(ProductContext)
+interface Props {
+  products: ListProductType
+  loading: boolean
+}
+
+export const ListProduct = ({ products, loading }: Props) => {
+  if (loading) return <Spinner/>
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-2">
-      { products.map(product => (
+      {
+      products.map(product => (
         <Product
+          category={product.category}
           description={product.description}
           id={product.id}
           image={product.image}
@@ -19,7 +25,7 @@ export const ListProduct = () => {
           quantity={product.quantity}
         />
       ))
-      }
+    }
     </div>
   )
 }

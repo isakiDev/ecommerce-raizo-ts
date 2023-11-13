@@ -2,20 +2,13 @@ import { useState, useEffect } from 'react'
 import { getCategories } from '../services/categories'
 import { type ListCategoriesType } from '../types'
 
-interface Props {
-  loading: boolean
-  categories: ListCategoriesType | []
-}
 export function useCategories () {
-  const [{ categories, loading }, setCategories] = useState<Props>({
-    categories: [],
-    loading: true
-  })
+  const [categories, setCategories] = useState<ListCategoriesType>([])
 
   const getCategoriesStore = async () => {
     try {
       const categoriesData = await getCategories()
-      setCategories({ loading: false, categories: categoriesData })
+      setCategories([...categoriesData])
     } catch (error) {
       console.error(error)
     }
@@ -27,7 +20,6 @@ export function useCategories () {
   }, [])
 
   return {
-    categories,
-    loading
+    categories
   }
 }

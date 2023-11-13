@@ -44,3 +44,6 @@ export const PlusIcon = () => (
 export const SubtractIcon = () => (
   <svg height="128" viewBox="0 0 1025 1024" width="128" xmlns="http://www.w3.org/2000/svg"><path d="M896.428 1024h-768q-53 0-90.5-37.5T.428 896V128q0-53 37.5-90.5t90.5-37.5h768q53 0 90.5 37.5t37.5 90.5v768q0 53-37.5 90.5t-90.5 37.5zm-128-544q0-13-9.5-22.5t-22.5-9.5h-448q-13 0-22.5 9.5t-9.5 22.5v64q0 13 9.5 22.5t22.5 9.5h448q13 0 22.5-9.5t9.5-22.5v-64z" fill="#7c3aed"/></svg>
 )
+export const ArrowLeftIcon = () => (
+  <svg height="25" viewBox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg"><path d="m10 18l-6-6l6-6l1.4 1.45L7.85 11H20v2H7.85l3.55 3.55L10 18Z" fill="currentColor"/></svg>
+)

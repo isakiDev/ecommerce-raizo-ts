@@ -12,6 +12,7 @@ interface Props {
   name: ProductNameType
   price: ProductPriceType
   quantity: ProductQuantityType
+  category: string
 }
 
 export const InfoProduct = ({ id, name, price, quantity }: Props) => {
@@ -26,9 +27,8 @@ export const InfoProduct = ({ id, name, price, quantity }: Props) => {
   return (
     <>
       <nav className='text-sm'>
-        <a href="">home / </a>
-        <a href="">category / </a>
-        <a href="">brand category</a>
+        <Link to="/">home / </Link>
+        <Link to={`/categories/${category}`}>{category}</Link>
       </nav>
       <h1 className='text-2xl'>{name}</h1>
       <h1 className='text-xl'>${price}</h1>
