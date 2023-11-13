@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { CartContext } from '../context/cart'
 import { type ProductCartType } from '../types'
-import { CloseIcon } from './Icons'
+import { CloseIcon, PlusIcon, SubtractIcon } from './Icons'
 
 interface Props {
   product: ProductCartType
@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const ShoppingCardProduct = ({ product, quantity }: Props) => {
-  const { onRemoveProductCart } = useContext(CartContext)
+  const { onRemoveProductCart, onAddProductCart } = useContext(CartContext)
 
   const {
     id,
@@ -18,14 +18,21 @@ export const ShoppingCardProduct = ({ product, quantity }: Props) => {
     price
   } = product
 
+  const handlePlusClick = () => {
+    onAddProductCart(id)
+  }
+
+  const handleSubtractClick = () => {
+
+  }
+
   return (
     <li
       className='flex pb-4'
-      key={id}
     >
       <img
         alt={`Image product ${name}`}
-        className='w-[60px] h-[60px]'
+        className='w-[70px] h-[70px]'
         src={image}
       />
 
@@ -37,10 +44,19 @@ export const ShoppingCardProduct = ({ product, quantity }: Props) => {
             onClick={() => { onRemoveProductCart({ id }) }}
           ><CloseIcon/></button>
         </div>
+        <div className="flex ">
 
-        <span className='text-sm text-gray-300'>
-          {quantity} x <strong className='text-white'>{price}</strong>
-        </span>
+          <button className='w-[30px] h-[30px] rounded-full flex justify-center items-center text-center text-white hover:scale-125 transition-all [&>svg]:max-h-full p-1' onClick={handleSubtractClick}>
+            <SubtractIcon/>
+          </button>
+
+          <span className='flex items-center text-sm text-gray-300'>
+            {quantity} x &nbsp;<strong className='text-white'> {price}</strong>
+          </span>
+          <button className='w-[30px] h-[30px] rounded-full flex justify-center items-center text-center text-white hover:scale-125 transition-all [&>svg]:max-h-full' onClick={handlePlusClick}>
+            <PlusIcon/>
+          </button>
+        </div>
       </div>
     </li>
   )
