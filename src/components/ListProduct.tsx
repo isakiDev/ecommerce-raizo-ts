@@ -22,7 +22,7 @@ export const ListProduct = ({ products, loading }: Props) => {
           key={product.id}
           name={product.name}
           price={product.price}
-          quantity={product.quantity}
+          stock={product.stock}
         />
       ))
     }

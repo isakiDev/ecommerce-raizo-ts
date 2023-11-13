@@ -18,8 +18,8 @@ export const ProductsCategory = () => {
     <section className='bg-neutral-900 p-4 h-screen'>
       {
         hasProducts
-          ? <ListProduct loading={loading} products={productsFiltered}/>
-          : <p className='text-gray-50 font-bold text-center'>Productos not found</p>
+          ? <div className='max-w-[1400px] mx-auto'><ListProduct loading={loading} products={productsFiltered}/></div>
+          : <p className='text-gray-50 font-bold text-center'>Products not found</p>
       }
     </section>
   )

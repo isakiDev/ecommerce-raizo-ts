@@ -10,14 +10,16 @@ interface Props {
   cart: ListProductCartType
   onAddProductCart: (id: ProductIdType) => void
   getTotalPrice: () => ProductPriceType
-  onRemoveProductCart: ({ id }: { id: ProductIdType }) => void
+  onRemoveProductCart: (id: ProductIdType) => void
+  onLessProductCart: (id: ProductIdType) => void
 }
 
 export const CartContext = createContext<Props>({
   cart: [],
   onAddProductCart: () => { },
   getTotalPrice: () => 0,
-  onRemoveProductCart: () => { }
+  onRemoveProductCart: () => { },
+  onLessProductCart: () => {}
 })
 
 export const CartProvider = ({ children }: { children: JSX.Element }) => {
@@ -26,39 +28,37 @@ export const CartProvider = ({ children }: { children: JSX.Element }) => {
   const { products } = useContext(ProductContext)
 
   const onAddProductCart = (id: ProductIdType) => {
-    // const productFoundInCart = cart?.find(product => product.id === id)
-    const productFoundInCart = cart?.findIndex(product => product?.id === id)
+    const productFoundIndex = cart?.findIndex(product => product.id === id)
 
-    if (productFoundInCart === -1) {
-      const productFoundInDB = products?.find(product => product?.id === id)
-      console.log('a')
+    if (productFoundIndex === -1) {
+      const { description, ...newProduct } = products?.find(product => product.id === id)
 
-      setCart(prev => [...prev, { ...productFoundInDB, quantity: 1 }])
-    } else {
-      console.log(productFoundInCart)
-      const dataUp = cart.map(product => {
-        if (product.id === id) {
-          return { ...product, quantity: product.quantity + 1, price: (product.quantity + 1) * product.price }
-        }
-        return product
-      })
-      setCart(dataUp)
-
-      // setCart(prev => { [...prev, { ...prev[productFoundInCart], quantity: prev[productFoundInCart].quantity + 1 }] })
+      setCart(prev => [...prev, { ...newProduct, quantity: 1 }])
+      return
     }
 
-    // const productFoundDb = products?.find(product => product?.id === id)
+    if (cart[productFoundIndex].stock === cart[productFoundIndex].quantity) return
 
-    // if (productFoundDb === undefined) {
-    //   console.log('a')
-    // } else {
-    //   const quantity = productFoundInCart.quantity > 1 ? 1 : 0
-
-    //   setCart(prev => ([...prev, { ...productFoundDb, quantity: 1 }]))
-    // }
+    setCart(prev => [
+      ...prev.slice(0, productFoundIndex),
+      { ...prev[productFoundIndex], quantity: prev[productFoundIndex].quantity + 1 },
+      ...prev.slice(productFoundIndex + 1)
+    ])
   }
 
-  const onRemoveProductCart = ({ id }: { id: ProductIdType }) => {
+  const onLessProductCart = (id: ProductIdType) => {
+    const productFoundIndex = cart?.findIndex(product => product.id === id)
+
+    if (cart[productFoundIndex].quantity === 1) return
+
+    setCart(prev => [
+      ...prev.slice(0, productFoundIndex),
+      { ...prev[productFoundIndex], quantity: prev[productFoundIndex].quantity - 1 },
+      ...prev.slice(productFoundIndex + 1)
+    ])
+  }
+
+  const onRemoveProductCart = (id: ProductIdType) => {
     const newCart = cart?.filter(product => product.id !== id)
     setCart(newCart)
   }
@@ -68,7 +68,7 @@ export const CartProvider = ({ children }: { children: JSX.Element }) => {
       return acc + (current.price * current.quantity)
     }, 0)
 
-    return price
+    return Number(price.toFixed(2))
   }
 
   return (
@@ -77,7 +77,8 @@ export const CartProvider = ({ children }: { children: JSX.Element }) => {
         cart,
         onAddProductCart,
         getTotalPrice,
-        onRemoveProductCart
+        onRemoveProductCart,
+        onLessProductCart
       }}
     >
       {children}

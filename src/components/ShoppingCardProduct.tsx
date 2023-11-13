@@ -9,7 +9,11 @@ interface Props {
 }
 
 export const ShoppingCardProduct = ({ product, quantity }: Props) => {
-  const { onRemoveProductCart, onAddProductCart } = useContext(CartContext)
+  const {
+    onRemoveProductCart,
+    onAddProductCart,
+    onLessProductCart
+  } = useContext(CartContext)
 
   const {
     id,
@@ -17,14 +21,6 @@ export const ShoppingCardProduct = ({ product, quantity }: Props) => {
     image,
     price
   } = product
-
-  const handlePlusClick = () => {
-    onAddProductCart(id)
-  }
-
-  const handleSubtractClick = () => {
-
-  }
 
   return (
     <li
@@ -41,19 +37,24 @@ export const ShoppingCardProduct = ({ product, quantity }: Props) => {
           <span>{name}</span>
           <button
             className='hover:text-indigo-500'
-            onClick={() => { onRemoveProductCart({ id }) }}
+            onClick={() => { onRemoveProductCart(id) }}
           ><CloseIcon/></button>
         </div>
-        <div className="flex ">
-
-          <button className='w-[30px] h-[30px] rounded-full flex justify-center items-center text-center text-white hover:scale-125 transition-all [&>svg]:max-h-full p-1' onClick={handleSubtractClick}>
+        <div className="flex">
+          <button
+            className='w-[30px] h-[30px] rounded-full flex justify-center items-center text-center text-white hover:scale-125 transition-all [&>svg]:max-h-full p-1'
+            onClick={() => { onLessProductCart(id) }}
+          >
             <SubtractIcon/>
           </button>
 
           <span className='flex items-center text-sm text-gray-300'>
             {quantity} x &nbsp;<strong className='text-white'> {price}</strong>
           </span>
-          <button className='w-[30px] h-[30px] rounded-full flex justify-center items-center text-center text-white hover:scale-125 transition-all [&>svg]:max-h-full' onClick={handlePlusClick}>
+          <button
+            className='w-[30px] h-[30px] rounded-full flex justify-center items-center text-center text-white hover:scale-125 transition-all [&>svg]:max-h-full'
+            onClick={() => { onAddProductCart(id) }}
+          >
             <PlusIcon/>
           </button>
         </div>
