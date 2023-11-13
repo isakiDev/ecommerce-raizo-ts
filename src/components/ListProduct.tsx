@@ -1,12 +1,13 @@
-import { useContext } from 'react'
-
-import { ProductContext } from '../context/product'
 import { Product } from './Product'
 import { Spinner } from './Spinner'
+import { type ListProductType } from '../types'
 
-export const ListProduct = () => {
-  const { products, loading } = useContext(ProductContext)
+interface Props {
+  products: ListProductType
+  loading: boolean
+}
 
+export const ListProduct = ({ products, loading }: Props) => {
   if (loading) return <Spinner/>
 
   return (
@@ -14,6 +15,7 @@ export const ListProduct = () => {
       {
       products.map(product => (
         <Product
+          category={product.category}
           description={product.description}
           id={product.id}
           image={product.image}

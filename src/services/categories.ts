@@ -1,4 +1,4 @@
-import { type Category, type ListCategoriesType } from '../types'
+import { type CategoryType, type ListCategoriesType } from '../types'
 
 const getCategories = async (): Promise<ListCategoriesType> => {
   const categoriesFound = await fetch('http://localhost:8080/categories')
@@ -7,7 +7,7 @@ const getCategories = async (): Promise<ListCategoriesType> => {
 
   const { categories } = await categoriesFound.json()
 
-  const data = categories?.map((category: Category) => (
+  const data = categories?.map((category: CategoryType) => (
     {
       id: category.id,
       name: category.name

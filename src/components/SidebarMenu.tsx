@@ -1,70 +1,9 @@
 import { useContext, useState } from 'react'
-import { NavLink } from 'react-router-dom'
 
 import { SidebarContext } from '../context/sidebar'
-import { MENU_LINKS } from '../consts'
 import { useCategories } from '../hooks/useCategories'
-import { type ListCategoriesType } from '../types'
-
-import { ArrowLeftIcon, CloseIcon } from './Icons'
-
-const ShowCategories = ({ categories, onToggleCategories }: { categories: ListCategoriesType, onToggleCategories: () => void }) => {
-  return (
-    <>
-      <HeaderSidebarMenu>
-        <a onClick={onToggleCategories}>
-          <ArrowLeftIcon/>
-        </a>
-      </HeaderSidebarMenu>
-      {
-        categories.map(({ id, name }) => (
-          <NavLink
-            className="text-sm font-semibold py-4 px-4"
-            key={id}
-            to={`/categories/${name}`}
-          >{name}</NavLink>
-        ))
-      }
-    </>
-  )
-}
-
-const ShowMenu = ({ onToggleCategories }: { onToggleCategories: () => void }) => {
-  return (
-    <>
-      <HeaderSidebarMenu>
-        <h2 className='text-xl'>Menu</h2>
-      </HeaderSidebarMenu>
-      {
-        MENU_LINKS.map(({ literal, ref }) => {
-          const showCategories = literal === 'Categorias' ? onToggleCategories : () => {}
-
-          return (
-            <NavLink
-              className="text-sm font-semibold py-4 px-4"
-              key={literal}
-              onClick={showCategories}
-              to={ref}
-            >{literal.toUpperCase()}</NavLink>
-          )
-        })
-      }
-    </>
-  )
-}
-
-const HeaderSidebarMenu = ({ children }: { children: JSX.Element }) => {
-  const { onToggleMenu } = useContext(SidebarContext)
-
-  return (
-    <header className="flex justify-between items-center p-4 border-b-[1px]">
-      {children}
-      <a onClick={onToggleMenu}>
-        <CloseIcon/>
-      </a>
-    </header>
-  )
-}
+import { ShowCategories } from './ShowCategories'
+import { ShowMenu } from './ShowMenu'
 
 export const SidebarMenu = () => {
   const [isActiveCategories, setIsActiveCategories] = useState(false)

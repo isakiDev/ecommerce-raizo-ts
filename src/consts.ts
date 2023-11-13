@@ -6,10 +6,6 @@ export const MENU_LINKS = [
   {
     literal: 'Categorias',
     ref: '#'
-  },
-  {
-    literal: 'Contacto',
-    ref: '/contact'
   }
 ] as const
 

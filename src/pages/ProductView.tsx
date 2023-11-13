@@ -15,28 +15,24 @@ export const ProductView = () => {
 
   if (product === undefined) return <Spinner/>
 
-  const hasProduct =
-  {
-    name: product?.name ?? '',
-    description: product?.description ?? '',
-    price: product?.price ?? 0,
-    image: product?.image ?? '',
-    quantity: product?.quantity ?? 0
-  }
-
   return (
     <div className='bg-neutral-900'>
       <div className="lg:mx-[315px] p-4">
         <div className=' bg-neutral-900 grid grid-cols-1 lg:grid-cols-2'>
           <section className="mt-[20px]">
-            <PreviewProduct image={hasProduct.image} quantity={hasProduct.quantity} />
+            <PreviewProduct image={product.image} quantity={product.quantity} />
           </section>
 
           <section className='mt-[20px] text-white [&>h1]:mt-[10px] [&>div]:mt-[10px] '>
-            <InfoProduct name={hasProduct.name} price={hasProduct.price} quantity={hasProduct.quantity}/>
+            <InfoProduct
+              category={product.category.name}
+              name={product.name}
+              price={product.price}
+              quantity={product.quantity}
+            />
           </section>
         </div>
-        <DescriptionProduct description={hasProduct.description} />
+        <DescriptionProduct description={product.description} />
       </div>
     </div>
   )
