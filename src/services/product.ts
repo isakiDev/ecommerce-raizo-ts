@@ -1,7 +1,7 @@
 import { type ProductType, type ListProductType } from '../types'
 
 const getProducts = async () => {
-  const product = await fetch('http://localhost:8080/products')
+  const product = await fetch('http://localhost:8080/products?limit=')
 
   if (!product.ok) throw new Error('Error in fetch')
 
