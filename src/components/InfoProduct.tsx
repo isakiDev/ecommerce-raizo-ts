@@ -42,7 +42,7 @@ export const InfoProduct = ({ id, name, price, stock, category }: Props) => {
         ? <h1 className='text-red-600'>Sold Out</h1>
         : <div>
           <h1 className='text-sky-600'>{stock} available</h1>
-          <button className='text-white bg-[#5A5FDE] hover:bg-indigo-600 mt-2 px-5 py-3 rounded' onClick={ handleClick }>Agregar al Carro</button>
+          <button className='text-white bg-[#5A5FDE] hover:bg-indigo-600 mt-2 px-5 py-3 rounded' onClick={ handleClick }>Add to cart</button>
         </div>
       }
 
