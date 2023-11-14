@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 import { SidebarContext } from '../context/sidebar'
 import {
@@ -22,30 +22,33 @@ const DropdownMenu = ({ categories }: { categories: ListCategoriesType }) => {
   }
 
   return (
-    <div
-      className='text-gray-50 gap-4 text-sm uppercase relative md:flex hidden'
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <span>Categories</span>
-      {isDropdownOpen && (
+    <div className='md:flex gap-4 justify-center items-center text-sm hidden'>
+      <Link className='text-gray-50 hover:text-indigo-400' to='/'>HOME</Link>
+      <div
+        className='text-gray-50 gap-4 uppercase relative md:flex hidden'
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <span className='hover:cursor-pointer hover:text-indigo-400'>Categories</span>
+        {isDropdownOpen && (
         <ul className='absolute bg-neutral-900 p-4 mt-[20px] rounded shadow-md'>
           {categories.map(({ id, name }) => (
             <li
               className='p-2'
               key={id}
             >
-              <Link
+              <NavLink
                 className='hover:text-indigo-600'
                 onClick={handleMouseLeave}
                 to={`/categories/${name}`}
               >
                 {name}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
-      )}
+        )}
+      </div>
     </div>
   )
 }
