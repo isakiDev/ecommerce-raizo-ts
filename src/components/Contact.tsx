@@ -15,7 +15,7 @@ export const Contact = () => {
         <input className="focus:border-white" required type="text"/>
         <p>Message</p>
         <textarea className="w-full min-h-[190px] mt-[10px] px-[15px] bg-black border-2 border-solid border-[#313131] focus:border-white rounded text-white outline-none resize-none" id="" name="" required></textarea>
-        <button className="rounded cursor-pointer h-10 w-[100px] text-black bg-[#F3F3F3] leading-[18px]">Enviar</button>
+        <button className="rounded cursor-pointer h-10 w-[100px] text-black bg-[#F3F3F3] leading-[18px]">Send</button>
       </form>
     </>
   )

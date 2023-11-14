@@ -33,7 +33,7 @@ export const ProductView = () => {
             />
           </section>
         </div>
-        <DescriptionProduct description={product.description} />
+        <DescriptionProduct description={product.description} name={ product.name} />
       </div>
     </div>
   )
