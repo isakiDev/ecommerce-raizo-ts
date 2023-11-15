@@ -31,7 +31,7 @@ export const CartProvider = ({ children }: { children: JSX.Element }) => {
     const productFoundIndex = cart?.findIndex(product => product.id === id)
 
     if (productFoundIndex === -1) {
-      const { description, ...newProduct } = products?.find(product => product.id === id)
+      const { ...newProduct } = products?.find(product => product.id === id)
 
       setCart(prev => [...prev, { ...newProduct, quantity: 1 }])
       return
