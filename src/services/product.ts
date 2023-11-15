@@ -1,7 +1,9 @@
 import { type ProductType, type ListProductType } from '../types'
 
+const host = import.meta.env.VITE_API
+
 const getProducts = async () => {
-  const product = await fetch('https://api-ecommerce-raizo.vercel.app/products?limit=')
+  const product = await fetch(`${host}/products?limit=`)
 
   if (!product.ok) throw new Error('Error in fetch')
 
